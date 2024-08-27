@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- スクロールコンテナの開始 -->
+    <div data-scroll-container>
+        
+        <!-- ヒーローバナーセクション -->
+        <div class="hero-banner" data-scroll-section>
+            <h1 class="hero-text">廣瀬大雅のポートフォリオへようこそ</h1>
+        </div>
+
+        <!-- ヘッダーとナビゲーション -->
+        <header data-scroll-section>
+            <h1 class="element">廣瀬大雅のポートフォリオ</h1>
+            <button id="menu-toggle">メニュー</button>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="hvr-underline-from-left">自己紹介</a></li>
+                    <li><a href="#projects" class="hvr-underline-from-left">プロジェクト</a></li>
+                    <li><a href="#skills" class="hvr-underline-from-left">スキルセット</a></li>
+                    <li><a href="#contact" class="hvr-underline-from-left">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 自己紹介セクション -->
+        <section id="about" class="fade-in reveal" data-scroll-section>
+            <h2 class="section-title">自己紹介</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <span class="highlight">廣瀬大雅</span><br>
+                        18歳で、KADOKAWAドワンゴ情報工科学院 名古屋校IOTコース3年生。<br>
+                        ウェブサイト制作が好きで、特に<span class="highlight">JavaScript</span>が得意。<br>
+                        日々スキルを磨いています。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- プロジェクトセクション -->
+        <section id="projects" class="scroll-trigger" data-scroll-section>
+            <h2 class="section-title">プロジェクト</h2>
+            <div class="project" id="game-tukuru" data-aos="fade-up">
+                <img src="images/suika2.png" alt="Game Tukuru Image">
+                <div class="project-content">
+                    <h3 class="project-title">game-tukuru</h3>
+                    <p class="project-description">スイカゲームをHTMLとJavaScriptで再現</p>
+                    <a href="https://github.com/Taiga0824js/game-tukuru" target="_blank" class="hvr-bounce-to-right">GitHubで閲覧</a>
+                </div>
+            </div>
+            <div class="project" id="game-otamesi" data-aos="fade-up">
+                <img src="images/STG2.png" alt="Game Otamesi Image">
+                <div class="project-content">
+                    <h3 class="project-title">game.otamesi</h3>
+                    <p class="project-description">JavaScriptで簡単なシューティングゲーム（一面のみ、制作途中）</p>
+                    <a href="https://github.com/Taiga0824js/game.otamesi" target="_blank" class="hvr-bounce-to-right">GitHubで閲覧</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- スキルセットセクション -->
+        <section id="skills" class="reveal" data-scroll-section>
+            <h2 class="section-title">スキルセット</h2>
+            <div class="skills-grid">
+                <!-- 1行目：すごく得意なスキル -->
+                <div class="skill-item">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <div class="skill-title">JavaScript</div>
+                    <div class="skill-level highlight">すごく得意</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <div class="skill-title">HTML</div>
+                    <div class="skill-level highlight">すごく得意</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <div class="skill-title">CSS</div>
+                    <div class="skill-level highlight">すごく得意</div>
+                </div>
+        
+                <!-- 2行目：得意なスキル -->
+                <div class="skill-item">
+                    <i class="fas fa-cube skill-icon"></i>
+                    <div class="skill-title">Three.js</div>
+                    <div class="skill-level">得意</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <div class="skill-title">Python3</div>
+                    <div class="skill-level">得意</div>
+                </div>
+        
+                <!-- 3行目：そこそこのスキル -->
+                <div class="skill-item">
+                    <i class="fab fa-github skill-icon"></i>
+                    <div class="skill-title">Git/GitHub</div>
+                    <div class="skill-level">そこそこ</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-scroll skill-icon"></i>
+                    <div class="skill-title">ScrollReveal</div>
+                    <div class="skill-level">そこそこ</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-mouse skill-icon"></i>
+                    <div class="skill-title">Custom Cursor</div>
+                    <div class="skill-level">そこそこ</div>
+                </div>
+        
+                <!-- 4行目：そこそこのスキル -->
+                <div class="skill-item">
+                    <i class="fas fa-eye skill-icon"></i>
+                    <div class="skill-title">AOS</div>
+                    <div class="skill-level">そこそこ</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-sync-alt skill-icon"></i>
+                    <div class="skill-title">Typed.js</div>
+                    <div class="skill-level">そこそこ</div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+     
+
+        <!-- お問い合わせセクション -->
+        <section id="contact" class="fade-in reveal" data-scroll-section>
+            <h2 class="section-title">お問い合わせ</h2>
+            <div class="contact-info">
+                <p>ご質問やご相談がありましたら、以下のメールアドレスまでご連絡ください。</p>
+                <a href="mailto:taiga.business.you@gmail.com" class="hvr-grow">taiga.business.you@gmail.com</a>
+                <p>お待ちしております。</p>
+            </div>
+        </section>
+
+    </div> <!-- スクロールコンテナの終了 -->
+
+    <!-- 戻るボタン -->
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- ダークモードトグル -->
+    <button id="dark-mode-toggle">🌙</button>
+
+    <!-- カスタムカーソル -->
+    <div class="custom-cursor"></div>
+
+    <!-- スクリプトファイルの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+</body>
+</html>

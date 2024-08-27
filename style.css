@@ -1,0 +1,480 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2c3e50, #4a6fa5);
+    color: #ecf0f1;
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 4rem; /* 全体的に余白を追加 */
+}
+
+.hero-banner {
+    height: 100vh;
+    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.hero-text {
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #1e2a38, #3a506b);
+    color: #ecf0f1;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #4a6fa5;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.1);
+}
+
+.project-content {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #bdc3c7;
+    margin-top: 0.5rem;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    color: #3498db;
+}
+
+.skill-title {
+    font-size: 1rem;
+    color: #ecf0f1;
+    margin-bottom: 0.3rem;
+}
+
+.skill-level {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    background-color: #34495e;
+    color: #ecf0f1;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+    width: 80px;
+    text-align: center;
+}
+
+.skill-level.highlight {
+    background-color: #3498db;
+    color: #fff;
+}
+
+
+
+.large-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+#contact {
+    padding-bottom: 4rem; /* 余白を追加 */
+}
+
+.contact-info {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: #ecf0f1;
+    font-size: 1.2rem;
+}
+
+.contact-info a {
+    color: #3498db;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #2980b9;
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+}
+
+#contact a:hover {
+    color: #2c3e50;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+    background: #2980b9;
+    transform: translateY(-5px);
+}
+
+#back-to-top i {
+    font-size: 1.5rem;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 1000;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+    z-index: 999;
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode .project,
+body.dark-mode footer {
+    background: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-mode .custom-cursor {
+    background-color: #ffffff;
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: #121212;
+}
+
+.project:hover ~ .custom-cursor {
+    transform: scale(2);
+    background-color: #2980b9;
+}
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 1000;
+}
+
+.fullscreen-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.fullscreen-menu ul li {
+    margin: 20px 0;
+}
+
+.fullscreen-menu ul li a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.fullscreen-menu ul li a:hover {
+    color: #3498db;
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+body.menu-active .fullscreen-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-trigger {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-trigger.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 背景として表示したい場合 */
+}
+
+.hero-banner {
+    position: relative;
+    z-index: 1; /* 3Dオブジェクトの上に表示されるように調整 */
+}
+
+.hero-banner {
+    height: 50vh; /* パーティクルシステムが表示される範囲 */
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 20vh;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 背景として配置 */
+    width: 100%;
+    height: 100%; /* ヒーローバナー内に制限 */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ecf0f1;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.4rem;
+}
+
+#about {
+    margin-bottom: 4rem; /* 自己紹介セクションの下に余白を追加 */
+}
+
+#projects {
+    margin-top: 4rem; /* プロジェクトセクションの上に余白を追加 */
+}
+
+.element {
+    height: 3rem; /* 高さを固定 */
+    display: flex;
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 縦方向の中央揃え */
+    overflow: hidden; /* テキストがはみ出さないように */
+    text-align: center; /* テキストの中央揃え */
+    margin: 0 auto; /* 要素自体を中央揃え */
+}
