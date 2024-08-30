@@ -1,13 +1,12 @@
 body {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #2c3e50, #4a6fa5);
+    background: linear-gradient(135deg, #2c3e50, #4a6fa5); /* 背景の設定を再確認 */
     color: #ecf0f1;
     transition: background-color 0.3s, color 0.3s;
-    padding-bottom: 4rem; /* 全体的に余白を追加 */
+    padding-bottom: 4rem;
 }
+
 
 .hero-banner {
     height: 100vh;
@@ -36,11 +35,10 @@ body {
         transform: translateY(0);
     }
 }
-
 header {
     background: linear-gradient(135deg, #1e2a38, #3a506b);
     color: #ecf0f1;
-    padding: 2rem;
+    padding: 2rem;  /* この値が大きいと余白が増える */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid #4a6fa5;
@@ -89,13 +87,14 @@ nav ul li a:hover {
 .section-title::after {
     content: "";
     position: absolute;
-    width: 50px;
-    height: 3px;
-    background: #3498db;
+    width: 50px;  /* アンダーラインの長さ */
+    height: 3px;  /* アンダーラインの太さ */
+    background: #3498db;  /* アンダーラインの色 */
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
 }
+
 
 #projects {
     display: grid;
@@ -126,15 +125,35 @@ nav ul li a:hover {
 }
 
 .project-content {
-    padding: 1.5rem;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 0;
+    padding-bottom: 1rem; /* これで高さを調整 */
 }
 
 .project-title {
+    position: relative;
     font-size: 1.5rem;
     color: #ecf0f1;
+    text-align: center;  /* 文字を中央揃えにする */
+    padding-bottom: 0.5rem; /* アンダーラインの余白 */
 }
+
+.project-title::after {
+    content: "";
+    position: absolute;
+    width: 50px;  /* アンダーラインの長さ */
+    height: 3px;  /* アンダーラインの太さ */
+    background: #3498db;  /* アンダーラインの色 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+#projects .section-title::after {
+    margin-top: 0; /* 余計な余白をなくす */
+    position: relative; /* アンダーラインの位置を調整 */
+    top: -10px; /* 必要に応じて値を調整 */
+}
+
 
 .project-description {
     font-size: 1rem;
@@ -193,14 +212,10 @@ nav ul li a:hover {
     color: #fff;
 }
 
-
-
 .large-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
 }
-
-
 
 @media (max-width: 768px) {
     .skills-container {
@@ -346,25 +361,9 @@ body.dark-mode #dark-mode-toggle {
     z-index: 1000;
 }
 
-.fullscreen-menu ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.fullscreen-menu ul li {
-    margin: 20px 0;
-}
-
-.fullscreen-menu ul li a {
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.fullscreen-menu ul li a:hover {
-    color: #3498db;
+.fullscreen-menu.menu-visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 #menu-toggle {
@@ -378,6 +377,7 @@ body.dark-mode #dark-mode-toggle {
     cursor: pointer;
     z-index: 1001;
 }
+
 
 body.menu-active .fullscreen-menu {
     opacity: 1;
@@ -415,19 +415,16 @@ canvas {
 }
 
 .hero-banner {
+    height: 59vh; /* ヒーローバナーの高さ */
     position: relative;
     z-index: 1; /* 3Dオブジェクトの上に表示されるように調整 */
-}
-
-.hero-banner {
-    height: 50vh; /* パーティクルシステムが表示される範囲 */
-    position: relative;
-    z-index: 1;
     color: #ffffff;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 20vh; /* 上の余白を調整 */
     overflow: hidden;
 }
+
+
 
 canvas {
     display: block;
@@ -477,4 +474,25 @@ canvas {
     overflow: hidden; /* テキストがはみ出さないように */
     text-align: center; /* テキストの中央揃え */
     margin: 0 auto; /* 要素自体を中央揃え */
+}
+
+/* メニューが表示されたときのスタイル */
+.fullscreen-menu.menu-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#about, #projects, #skills, #contact {
+    margin-top: 4rem; /* 各セクションの上の余白を確認 */
+    margin-bottom: 4rem; /* 各セクションの下の余白を確認 */
+    background: none; /* 不要な背景が設定されている場合は解除します */
+}
+
+#dark-mode-toggle {
+    transition: transform 0.3s ease-in-out;
+}
+
+#dark-mode-toggle:active {
+    transform: scale(0.9) rotate(45deg);
 }

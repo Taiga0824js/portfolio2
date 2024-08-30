@@ -107,16 +107,17 @@ document.querySelectorAll('.project').forEach(project => {
 
 // フルスクリーンメニュー
 const menuToggle = document.getElementById('menu-toggle');
-menuToggle.addEventListener('click', () => {
-    document.body.classList.toggle('menu-active');
-});
+const fullscreenMenu = document.querySelector('.fullscreen-menu');
+const menuItems = fullscreenMenu.querySelectorAll('a');
 
-document.querySelectorAll('.fullscreen-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.body.classList.remove('menu-active');
+menuToggle.addEventListener('click', () => {
+    fullscreenMenu.classList.toggle('menu-visible');
+});
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        fullscreenMenu.classList.remove('menu-visible');
     });
 });
-
 // スクロールトリガーアニメーション
 window.addEventListener('scroll', () => {
     const triggerElements = document.querySelectorAll('.scroll-trigger');
@@ -248,12 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    getDirection: true
-});
-
+// ScrollReveal初期化
 ScrollReveal().reveal('.section-title', {
     distance: '50px',
     origin: 'bottom',
@@ -267,3 +263,4 @@ ScrollReveal().reveal('.project', {
     duration: 800,
     reset: false
 });
+
