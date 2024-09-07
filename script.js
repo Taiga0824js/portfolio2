@@ -264,3 +264,143 @@ ScrollReveal().reveal('.project', {
     reset: false
 });
 
+
+// ダブルクリックでテキストが崩れる機能
+document.querySelectorAll('.crumble-text').forEach(section => {
+    section.addEventListener('dblclick', () => {
+        const textElements = section.querySelectorAll('.section-title, p');
+        textElements.forEach(el => {
+            const chars = el.innerText.split('');
+            el.innerHTML = chars.map(char => `<span class="crumble">${char}</span>`).join('');
+
+            // すべての文字に対して崩れるアニメーションを適用
+            el.querySelectorAll('.crumble').forEach((span, index) => {
+                setTimeout(() => {
+                    span.classList.add('explode');
+                }, index * 50); // 少しずつ遅延させる
+            });
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const square = document.getElementById('escape-square');
+    let isMoving = false;
+    const moveSpeed = 15; // 四角が移動する速さ
+    const safeDistance = 150; // マウスカーソルから逃げる距離
+
+    square.addEventListener('dblclick', () => {
+        isMoving = true;
+        square.classList.add('moving');
+        square.innerHTML = '<div class="leg left-leg"></div><div class="leg right-leg"></div>';
+    });
+
+    document.addEventListener('mousemove', (event) => {
+        if (isMoving) {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            const squareRect = square.getBoundingClientRect();
+
+            const dx = squareRect.left + squareRect.width / 2 - mouseX;
+            const dy = squareRect.top + squareRect.height / 2 - mouseY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < safeDistance) {
+                const angle = Math.atan2(dy, dx);
+                const newX = squareRect.left + moveSpeed * Math.cos(angle);
+                const newY = squareRect.top + moveSpeed * Math.sin(angle);
+
+                // 四角の位置を更新
+                square.style.left = `${newX}px`;
+                square.style.top = `${newY}px`;
+            }
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const square = document.getElementById('escape-square');
+    let isMoving = false;
+    const moveSpeed = 15; // 四角が移動する速さ
+    const safeDistance = 150; // マウスカーソルから逃げる距離
+
+    square.addEventListener('dblclick', () => {
+        isMoving = true;
+        square.classList.add('moving');
+        square.innerHTML = '<div class="leg left-leg"></div><div class="leg right-leg"></div>';
+    });
+
+    document.addEventListener('mousemove', (event) => {
+        if (isMoving) {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            const squareRect = square.getBoundingClientRect();
+
+            const dx = squareRect.left + squareRect.width / 2 - mouseX;
+            const dy = squareRect.top + squareRect.height / 2 - mouseY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < safeDistance) {
+                const angle = Math.atan2(dy, dx);
+                const newX = squareRect.left + moveSpeed * Math.cos(angle);
+                const newY = squareRect.top + moveSpeed * Math.sin(angle);
+
+                // 四角の位置を更新
+                square.style.left = `${newX}px`;
+                square.style.top = `${newY}px`;
+            }
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const escapeSquare = document.getElementById('escape-square');
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let squareX = window.innerWidth / 2;
+    let squareY = window.innerHeight / 2;
+
+    const speed = 3;  // 逃げる速度
+
+    const updatePosition = () => {
+        const dx = squareX - mouseX;
+        const dy = squareY - mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) {  // 距離が近いときだけ逃げる
+            squareX += (dx / distance) * speed;
+            squareY += (dy / distance) * speed;
+
+            escapeSquare.style.left = `${squareX}px`;
+            escapeSquare.style.top = `${squareY}px`;
+            escapeSquare.classList.add('moving');
+        } else {
+            escapeSquare.classList.remove('moving');
+        }
+
+        requestAnimationFrame(updatePosition);
+    };
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    escapeSquare.addEventListener('dblclick', () => {
+        if (!escapeSquare.classList.contains('moving')) {
+            escapeSquare.classList.add('moving');
+        } else {
+            escapeSquare.classList.remove('moving');
+        }
+    });
+
+    // 足を追加
+    const leftLeg = document.createElement('div');
+    leftLeg.className = 'leg left-leg';
+    const rightLeg = document.createElement('div');
+    rightLeg.className = 'leg right-leg';
+    escapeSquare.appendChild(leftLeg);
+    escapeSquare.appendChild(rightLeg);
+
+    updatePosition();
+});

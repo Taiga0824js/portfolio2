@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- スクロールコンテナの開始 -->
@@ -35,7 +39,7 @@
         </header>
 
         <!-- 自己紹介セクション -->
-        <section id="about" class="fade-in reveal" data-scroll-section>
+        <section id="about" class="fade-in reveal crumble-text" data-scroll-section>
             <h2 class="section-title">自己紹介</h2>
             <div class="about-content">
                 <div class="about-text">
@@ -48,6 +52,11 @@
                 </div>
             </div>
         </section>
+        
+        <section id="projects" class="scroll-trigger crumble-text" data-scroll-section>
+            <!-- プロジェクト内容 -->
+        </section>
+        
 
         <!-- プロジェクトセクション -->
         <section id="projects" class="scroll-trigger" data-scroll-section>
@@ -55,7 +64,7 @@
             <div class="project" id="game-tukuru" data-aos="fade-up">
                 <img src="images/suika2.png" alt="Game Tukuru Image">
                 <div class="project-content">
-                    <h3 class="project-title">game-tukuru</h3>
+                    <h3 class="project-title">WEB版スイカゲーム</h3>
                     <p class="project-description">スイカゲームをHTMLとJavaScriptで再現</p>
                     <a href="https://github.com/Taiga0824js/game-tukuru" target="_blank" class="hvr-bounce-to-right">GitHubで閲覧</a>
                 </div>
@@ -63,7 +72,7 @@
             <div class="project" id="game-otamesi" data-aos="fade-up">
                 <img src="images/STG2.png" alt="Game Otamesi Image">
                 <div class="project-content">
-                    <h3 class="project-title">game.otamesi</h3>
+                    <h3 class="project-title">シューティングゲーム</h3>
                     <p class="project-description">JavaScriptで簡単なシューティングゲーム（一面のみ、制作途中）</p>
                     <a href="https://github.com/Taiga0824js/game.otamesi" target="_blank" class="hvr-bounce-to-right">GitHubで閲覧</a>
                 </div>
@@ -162,5 +171,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
+    <script src="menu-physics.js"></script>
+    <script src="interactiveBackground.js"></script>
 </body>
 </html>

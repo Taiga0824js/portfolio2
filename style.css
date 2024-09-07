@@ -5,6 +5,9 @@ body {
     color: #ecf0f1;
     transition: background-color 0.3s, color 0.3s;
     padding-bottom: 4rem;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -495,4 +498,76 @@ canvas {
 
 #dark-mode-toggle:active {
     transform: scale(0.9) rotate(45deg);
+}
+
+@keyframes crumble {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.crumble {
+    display: inline-block;
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.crumble.explode {
+    animation: crumble 1s forwards;
+}
+
+#escape-square {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-in-out, top 0.1s, left 0.1s;
+    cursor: pointer;
+}
+
+#escape-square.moving {
+    width: 40px;
+    height: 40px;
+    background-color: #e74c3c;
+}
+
+.leg {
+    width: 5px;
+    height: 20px;
+    background-color: #2c3e50;
+    position: absolute;
+    bottom: -10px;
+}
+
+.left-leg {
+    left: 5px;
+    transform-origin: top;
+    animation: walkLeft 0.4s infinite;
+}
+
+.right-leg {
+    right: 5px;
+    transform-origin: top;
+    animation: walkRight 0.4s infinite;
+}
+
+@keyframes walkLeft {
+    0%, 100% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes walkRight {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
 }
